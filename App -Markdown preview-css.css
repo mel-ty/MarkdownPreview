@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;600&display=swap");
+/**
+:root {
+  --body-color: #246A51;
+  --text: #FF8600;
+  --component-background: #191102;
+  --component-dark-accent: #78290F;
+  --code-background: #0F084B;
+  --table-accent: #1E2019;
+  --rem-20: 125%;
+  --rem-16: 100%;
+}
+
+orange-chocolate
+  --body-color: #246A51;
+  --text: #FF8600;
+  --component-background: #191102;
+  --component-dark-accent: #78290F;
+  --code-background: #0F084B;
+  --table-accent: #1E2019;
+
+lavender theme
+  --body-color: #DBF4A7;
+  --text: #12130F;
+  --component-background: #F9F9ED;
+  --component-dark-accent: #7D84B2;
+  --code-background: #D9DBF1;
+  --table-accent: #8E9DCC;
+strawberry-soda
+  --body-color: #04B5A3;
+  --text: #12130F;
+  --component-background: #F7C1C6;
+  --component-dark-accent: #C43140;
+  --code-background: #B4CCCA;
+  --table-accent: #2A968D;
+
+**/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/**
+16px - 100%
+20px - 125%
+1rem = 20px
+**/
+html {
+  font-size: var(--rem-20);
+}
+/*font-weight: 400 | 600*/
+body {
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  background-color: var(--body-color);
+}
+#root {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.page-menu {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  z-index: 100;
+}
+#menu-up {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0.3rem 0 0 1.2rem;
+
+  background-color: inherit;
+  transition: padding 0.5s ease;
+}
+#link-up {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--component-dark-accent);
+}
+#menu-up:hover {
+  padding-left: 1.6rem;
+}
+#menu-icon {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+
+  font-size: 1.5rem;
+  color: var(--component-dark-accent);
+  background-color: inherit;
+  transition: padding 0.5s ease;
+}
+#menu-icon:hover {
+  padding-left: 1.6rem;
+}
+#menu-options {
+  position: relative;
+  
+  padding: 0.5rem 0.3rem;
+  border: 4px solid var(--text);
+  background-color: var(--component-background);
+  transition: transform 0.5s ease;
+}
+.menu-options-on {
+  transform: none;
+}
+.menu-options-off {
+  transform: translateX(-100%);
+}
+#menu-text {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+label {
+  display: block;
+  margin: 0.5rem;
+  font-size: 1rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.container {
+  padding: 1.5rem 4rem;
+}
+.header-box {
+  background-color: var(--component-dark-accent);
+  position: relative;
+}
+
+.box {
+  margin-top: 1rem;
+  border: 2px solid var(--component-dark-accent);
+}
+.box h2 {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+  background-color: var(--component-dark-accent);
+}
+
+/*editor*/
+.header-editor {
+  display: inline-block;
+  
+}
+
+button {
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  border: none;
+  padding: 0.3rem 0.5rem;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: inherit;
+  background-color: var(--component-dark-accent);
+  transition: color ease;
+}
+button:hover {
+  color: var(--component-background);
+}
+.textarea {
+  background-color: var(--component-background);
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: inherit;
+  outline: none;
+
+  display: block;
+  min-height: 5rem;
+  width: 100%;
+  resize: vertical;
+  overflow-y: scroll;
+  border: none;
+  padding: 0.5rem;
+}
+
+/*preview*/
+
+.preview-text {
+  background-color: var(--component-background);
+  overflow-wrap: break-word;
+  padding: 1rem;
+} 
+@media (max-width: 700px) {
+  .container {
+  padding: 1.5rem 2rem;
+
+  }
+}
+
+
+/*MARKDOWN STYLES*/
+
+#preview p {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+#preview table {
+  border: 2px solid var(--table-accent);
+  border-collapse: collapse;
+  margin: 0.5rem auto;
+}
+#preview table > thead {
+  background: var(--code-background);
+}
+
+th,
+td {
+  font-size: 0.8rem;
+  padding: 5px;
+  border: 2px solid var(--table-accent);
+}
+
+#preview ul,
+ol {
+  padding-left: 2rem;
+  font-size: 0.8rem;
+
+}
+#preview code {
+  background: var(--code-background);
+  
+  overflow-x: auto;
+}
+#preview pre > code {
+  display: block;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+blockquote {
+  background: var(--table-accent);
+  border-left: 3px solid var(--text);
+  font-size: 0.9rem;
+  margin: 0.5rem 0.9rem;
+  padding: 0.4rem;
+}
+#preview h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border-top: 3px solid var(--text);
+  border-bottom: 3px solid var(--text);
+}
+#preview h2 {
+  margin: 0.8rem auto 0;
+  font-size: 1rem;
+  text-align: center;
+}
+#preview h3 {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+a {
+  color: inherit;
+}
+#preview img {
+  display: block;
+  max-width: 70%;
+  margin: 1rem auto;
+}
